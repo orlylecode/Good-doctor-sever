@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="maladie">
+            <h2><span jhiTranslate="goodDoctorSeverApp.maladie.detail.title">Maladie</span> {{maladie.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="goodDoctorSeverApp.maladie.nom">Nom</span></dt>
+                <dd>
+                    <span>{{maladie.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.maladie.description">Description</span></dt>
+                <dd>
+                    <span>{{maladie.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.maladie.type">Type</span></dt>
+                <dd>
+                    <span>{{maladie.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.maladie.conseils">Conseils</span></dt>
+                <dd>
+                    <span *ngFor="let conseils of maladie.conseils; let last = last">
+                        <a [routerLink]="['/conseil', conseils?.id, 'view' ]">{{conseils.nom}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.maladie.traitements">Traitements</span></dt>
+                <dd>
+                    <span *ngFor="let traitements of maladie.traitements; let last = last">
+                        <a [routerLink]="['/traitement', traitements?.id, 'view' ]">{{traitements.nom}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.maladie.symptomes">Symptomes</span></dt>
+                <dd>
+                    <span *ngFor="let symptomes of maladie.symptomes; let last = last">
+                        <a [routerLink]="['/symptome', symptomes?.id, 'view' ]">{{symptomes.nom}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/maladie', maladie.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

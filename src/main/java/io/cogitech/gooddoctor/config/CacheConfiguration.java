@@ -42,6 +42,19 @@ public class CacheConfiguration {
             createCache(cm, io.cogitech.gooddoctor.domain.User.class.getName());
             createCache(cm, io.cogitech.gooddoctor.domain.Authority.class.getName());
             createCache(cm, io.cogitech.gooddoctor.domain.User.class.getName() + ".authorities");
+            createCache(cm, io.cogitech.gooddoctor.domain.Traitement.class.getName());
+            createCache(cm, io.cogitech.gooddoctor.domain.Traitement.class.getName() + ".remedes");
+            createCache(cm, io.cogitech.gooddoctor.domain.Traitement.class.getName() + ".maladies");
+            createCache(cm, io.cogitech.gooddoctor.domain.Symptome.class.getName());
+            createCache(cm, io.cogitech.gooddoctor.domain.Symptome.class.getName() + ".maladies");
+            createCache(cm, io.cogitech.gooddoctor.domain.Remede.class.getName());
+            createCache(cm, io.cogitech.gooddoctor.domain.Remede.class.getName() + ".traitements");
+            createCache(cm, io.cogitech.gooddoctor.domain.Maladie.class.getName());
+            createCache(cm, io.cogitech.gooddoctor.domain.Maladie.class.getName() + ".conseils");
+            createCache(cm, io.cogitech.gooddoctor.domain.Maladie.class.getName() + ".traitements");
+            createCache(cm, io.cogitech.gooddoctor.domain.Maladie.class.getName() + ".symptomes");
+            createCache(cm, io.cogitech.gooddoctor.domain.Conseil.class.getName());
+            createCache(cm, io.cogitech.gooddoctor.domain.Conseil.class.getName() + ".maladies");
             // jhipster-needle-ehcache-add-entry
         };
     }

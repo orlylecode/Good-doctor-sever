@@ -1,0 +1,26 @@
+{
+  "goodDoctorSeverApp": {
+    "traitement": {
+      "home": {
+        "title": "Traitements",
+        "createLabel": "Create a new Traitement",
+        "createOrEditLabel": "Create or edit a Traitement",
+        "notFound": "No Traitements found"
+      },
+      "created": "A new Traitement is created with identifier {{ param }}",
+      "updated": "A Traitement is updated with identifier {{ param }}",
+      "deleted": "A Traitement is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Traitement {{ id }}?"
+      },
+      "detail": {
+        "title": "Traitement"
+      },
+      "nom": "Nom",
+      "auteur": "Auteur",
+      "description": "Description",
+      "remedes": "Remedes",
+      "maladies": "Maladies"
+    }
+  }
+}

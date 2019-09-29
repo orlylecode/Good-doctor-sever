@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="remede">
+            <h2><span jhiTranslate="goodDoctorSeverApp.remede.detail.title">Remede</span> {{remede.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="goodDoctorSeverApp.remede.nom">Nom</span></dt>
+                <dd>
+                    <span>{{remede.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.remede.composition">Composition</span></dt>
+                <dd>
+                    <span>{{remede.composition}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.remede.possologie">Possologie</span></dt>
+                <dd>
+                    <span>{{remede.possologie}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.remede.prevention">Prevention</span></dt>
+                <dd>
+                    <span>{{remede.prevention}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.remede.prix">Prix</span></dt>
+                <dd>
+                    <span>{{remede.prix}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/remede', remede.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

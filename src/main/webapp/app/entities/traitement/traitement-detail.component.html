@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="traitement">
+            <h2><span jhiTranslate="goodDoctorSeverApp.traitement.detail.title">Traitement</span> {{traitement.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="goodDoctorSeverApp.traitement.nom">Nom</span></dt>
+                <dd>
+                    <span>{{traitement.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.traitement.auteur">Auteur</span></dt>
+                <dd>
+                    <span>{{traitement.auteur}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.traitement.description">Description</span></dt>
+                <dd>
+                    <span>{{traitement.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="goodDoctorSeverApp.traitement.remedes">Remedes</span></dt>
+                <dd>
+                    <span *ngFor="let remedes of traitement.remedes; let last = last">
+                        <a [routerLink]="['/remede', remedes?.id, 'view' ]">{{remedes.nom}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/traitement', traitement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
