@@ -1,0 +1,52 @@
+{
+    "name": "Maladie",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "conseil",
+            "otherEntityRelationshipName": "maladies",
+            "relationshipName": "conseils",
+            "otherEntityField": "nom",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "traitement",
+            "otherEntityRelationshipName": "maladies",
+            "relationshipName": "traitements",
+            "otherEntityField": "nom",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "symptome",
+            "otherEntityRelationshipName": "maladies",
+            "relationshipName": "symptomes",
+            "otherEntityField": "nom",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190929161111",
+    "entityTableName": "maladie",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

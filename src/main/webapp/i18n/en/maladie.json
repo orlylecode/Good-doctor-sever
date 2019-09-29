@@ -1,0 +1,27 @@
+{
+  "goodDoctorSeverApp": {
+    "maladie": {
+      "home": {
+        "title": "Maladies",
+        "createLabel": "Create a new Maladie",
+        "createOrEditLabel": "Create or edit a Maladie",
+        "notFound": "No Maladies found"
+      },
+      "created": "A new Maladie is created with identifier {{ param }}",
+      "updated": "A Maladie is updated with identifier {{ param }}",
+      "deleted": "A Maladie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Maladie {{ id }}?"
+      },
+      "detail": {
+        "title": "Maladie"
+      },
+      "nom": "Nom",
+      "description": "Description",
+      "type": "Type",
+      "conseils": "Conseils",
+      "traitements": "Traitements",
+      "symptomes": "Symptomes"
+    }
+  }
+}

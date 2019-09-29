@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-maladie-heading" jhiTranslate="goodDoctorSeverApp.maladie.home.createOrEditLabel">Create or edit a Maladie</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="goodDoctorSeverApp.maladie.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="goodDoctorSeverApp.maladie.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="goodDoctorSeverApp.maladie.type" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                           formControlName="type"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="goodDoctorSeverApp.maladie.conseils" for="field_conseils">Conseils</label>
+                    <select class="form-control" id="field_conseils" multiple name="conseils" formControlName="conseils">
+                        <option [ngValue]="getSelected(editForm.get('conseils').value, conseilOption)" *ngFor="let conseilOption of conseils; trackBy: trackConseilById">{{conseilOption.nom}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="goodDoctorSeverApp.maladie.traitements" for="field_traitements">Traitements</label>
+                    <select class="form-control" id="field_traitements" multiple name="traitements" formControlName="traitements">
+                        <option [ngValue]="getSelected(editForm.get('traitements').value, traitementOption)" *ngFor="let traitementOption of traitements; trackBy: trackTraitementById">{{traitementOption.nom}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="goodDoctorSeverApp.maladie.symptomes" for="field_symptomes">Symptomes</label>
+                    <select class="form-control" id="field_symptomes" multiple name="symptomes" formControlName="symptomes">
+                        <option [ngValue]="getSelected(editForm.get('symptomes').value, symptomeOption)" *ngFor="let symptomeOption of symptomes; trackBy: trackSymptomeById">{{symptomeOption.nom}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

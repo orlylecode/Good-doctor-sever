@@ -1,0 +1,36 @@
+{
+    "name": "Conseil",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "auteur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "conseil",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "maladie",
+            "otherEntityRelationshipName": "conseils",
+            "relationshipName": "maladies",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190929161112",
+    "entityTableName": "conseil",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

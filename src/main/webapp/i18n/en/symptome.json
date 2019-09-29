@@ -1,0 +1,25 @@
+{
+  "goodDoctorSeverApp": {
+    "symptome": {
+      "home": {
+        "title": "Symptomes",
+        "createLabel": "Create a new Symptome",
+        "createOrEditLabel": "Create or edit a Symptome",
+        "notFound": "No Symptomes found"
+      },
+      "created": "A new Symptome is created with identifier {{ param }}",
+      "updated": "A Symptome is updated with identifier {{ param }}",
+      "deleted": "A Symptome is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Symptome {{ id }}?"
+      },
+      "detail": {
+        "title": "Symptome"
+      },
+      "nom": "Nom",
+      "description": "Description",
+      "effet": "Effet",
+      "maladies": "Maladies"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "goodDoctorSeverApp": {
+    "remede": {
+      "home": {
+        "title": "Remedes",
+        "createLabel": "Create a new Remede",
+        "createOrEditLabel": "Create or edit a Remede",
+        "notFound": "No Remedes found"
+      },
+      "created": "A new Remede is created with identifier {{ param }}",
+      "updated": "A Remede is updated with identifier {{ param }}",
+      "deleted": "A Remede is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Remede {{ id }}?"
+      },
+      "detail": {
+        "title": "Remede"
+      },
+      "nom": "Nom",
+      "composition": "Composition",
+      "possologie": "Possologie",
+      "prevention": "Prevention",
+      "prix": "Prix",
+      "traitements": "Traitements"
+    }
+  }
+}

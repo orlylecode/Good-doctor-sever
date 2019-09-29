@@ -1,0 +1,44 @@
+{
+    "name": "Remede",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "composition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "possologie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prevention",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prix",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "traitement",
+            "otherEntityRelationshipName": "remedes",
+            "relationshipName": "traitements",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190929161110",
+    "entityTableName": "remede",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
