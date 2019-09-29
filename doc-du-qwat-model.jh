@@ -1,0 +1,82 @@
+entity Traitement {
+  nom 			String,
+  auteur		String,
+  description	String,
+  //List<Remede> remedeList ;
+  }
+
+entity Symptome {
+      nom			String ,
+      description	String ,
+      effet			String ,
+    }
+
+entity Remede {
+    nom 		String ,	
+    composition String ,	
+    possologie 	String ,
+    prevention 	String ,
+    prix 		String ,
+}
+
+entity Maladie {
+     nom		 String ,	
+     description String ,	
+     type		 String ,
+     // List<Traitement> traitements;
+     // List<Conseil> conseils;
+     // List<Symptome> symptomes;
+     }
+    
+entity Conseil {
+    nom 	 String,
+    auteur   String,
+    conseil  String,
+}
+
+
+// defining multiple OneToMany relationships with comments
+//relationship OneToMany {
+//	Remede {remede} to  Traitement,
+//	Conseil {conseil} to  Maladie,
+//	Traitement {traitement} to  Maladie,
+//	Symptome {symptome} to  Maladie,
+//}
+
+relationship ManyToMany{
+  Traitement   {remedes(nom)}       to      Remede      {traitements}  ,
+  Maladie      {conseils(nom)}      to  	Conseil     {maladies}  ,
+  Maladie      {traitements(nom)}   to  	Traitement  {maladies}  ,
+  Maladie      {symptomes(nom)}     to  	Symptome    {maladies}  ,
+
+	//Car{driver} to Driver{car}
+}
+
+
+//{traitements}
+//{maladies}
+//{maladies}
+//{maladies}
+// relationship ManyToOne{
+//	Traitement {remede}  to Remede         ,
+//	Maladie    {conseil}    to Conseil     ,
+//	Maladie    {traitement} to Traitement  ,
+//	Maladie    {symptome}   to Symptome    ,
+//}
+
+//paginate  Traitement , Remede , Conseil , Symptome with pagination
+
+//paginate Maladie, Traitement with infinite-scroll
+
+//paginate Maladie with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+//Set service options to all except few
+//service all with serviceImpl except Remede, Traitement ,Conseil ,Symptome
+
+paginate * with pagination
+service all with serviceClass
+
+//For search by keyword
+//search * with elasticsearch
